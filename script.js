@@ -10,14 +10,15 @@ const images = [
 ];
 
 function downloadImage(url) {
-  return new Promise((resolve, reject) => {
-    const img=new Image();
-    img.src=url;
-    img.onload=()=>resolve(img);
-    img.onerror=()=>reject("error")
+  // return new Promise((resolve, reject) => {
+  //   const img=new Image();
+  //   img.src=url;
+  //   img.onload=()=>resolve(img);
+  //   img.onerror=()=>reject("error")
     
 
-  })
+  // })
+	return Promise.resolve(Object.assign(new Image(),{src:url}))
 }
 
 function renderImage() {
